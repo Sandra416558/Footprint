@@ -1,36 +1,99 @@
-// Funktion: Sortieren der Tabelle nach Land
+// jscript.js
+
+/* Tabelle filtern */
 document.addEventListener("DOMContentLoaded", function () {
   var input = document.getElementById("filterInput");
-  var table = document.getElementById("tabelle-emissionsdaten");
-  if (!input || !table) return;
+  var tbody = document.getElementById("tabelle-emissionsdaten").getElementsByTagName("tbody")[0];
+  if (!input || !tbody) return;
 
-  var tbody = table.getElementsByTagName("tbody")[0];
   var rows = tbody.getElementsByTagName("tr");
 
-  // Funktion zur Vereinfachung des Vergleichsstrings
-  function norm(text) {
-    return String(text || "").toLowerCase();
-  }
-
   function filterRows(query) {
-    var q = norm(query.trim());
+    query = query.toLowerCase();
 
     for (var i = 0; i < rows.length; i++) {
-      var row = rows[i];
-      var cells = row.getElementsByTagName("td");
+      var cells = rows[i].getElementsByTagName("td");
+      if (cells.length >= 2) {
+        var company = cells[0].textContent.toLowerCase();
+        var country = cells[1].textContent.toLowerCase();
 
-      if (!q) {
-        row.style.display = ""; // Zeige alle Zeilen bei leerem Suchfeld
-        continue;
-      }
-
-      var company = norm(cells[0] ? cells[0].textContent : "");
-      var country = norm(cells[1] ? cells[1].textContent : "");
-
-      if (company.indexOf(q) !== -1 || country.indexOf(q) !== -1) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
+        if (company.indexOf(query) > -1 || country.indexOf(query) > -1) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
       }
     }
   }
+
+  input.addEventListener("keyup", function () {
+    filterRows(this.value);
+  });
+
+  filterRows(""); // Anfangszustand: alles sichtbar
+});
+
+/* Tabelle sortieren */
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("filterButton");
+  const menu = document.getElementById("filterMenu");
+  const table = document.getElementById("tabelle-emissionsdaten");
+  const tbody = table.querySelector("tbody");
+
+  // Dropdown ein-/ausblenden
+  button.addEventListener("click", function () {
+    menu.classList.toggle("show");
+  });
+
+  // Dropdown-Items durchgehen
+  menu.querySelectorAll(".dropdown-item").forEach(item => {
+    item.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const col = parseInt(this.getAttribute("data-col")); // Spaltenindex
+      const order = this.getAttribute("data-order");       // asc/desc
+
+      sortTable(tbody, col, order);
+      menu.classList.remove("show"); // Menü nach Klick schließen
+    });
+  });
+
+  // Klick außerhalb → Dropdown schließen
+  document.addEventListener("click", function (event) {
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+      menu.classList.remove("show");
+    }
+  });
+
+  // Sortierfunktion
+  function sortTable(tbody, colIndex, order) {
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    rows.sort((a, b) => {
+      const cellA = a.children[colIndex]?.innerText.trim().toLowerCase();
+      const cellB = b.children[colIndex]?.innerText.trim().toLowerCase();
+
+      if (cellA < cellB) return order === "asc" ? -1 : 1;
+      if (cellA > cellB) return order === "asc" ? 1 : -1;
+      return 0;
+    });
+
+    // Neu sortierte Reihen anhängen
+    rows.forEach(row => tbody.appendChild(row));
+  }
+});
+
+// Menü Toggle für mobile Geräte
+const toggleBtn = document.getElementById('menuToggle');
+const menuItems = document.getElementById('menuItems');
+
+toggleBtn.addEventListener('click', () => {
+  menuItems.classList.toggle('d-none');
+});
+
+// Schreibrichtung prüfen und Menü rechts positionieren, falls rtl
+if (document.documentElement.dir === 'rtl') {
+  document.getElementById('menu').classList.remove('start-0');
+  document.getElementById('menu').classList.add('end-0');
+}
+
