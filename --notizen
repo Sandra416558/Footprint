@@ -272,3 +272,18 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </li>
                             </ul>
                         </div>
+
+
+
+    <!-- Menü: 
+     CSS - um das Menü je nach Schriftkultur rechts oder links anzeigen zu lassen;
+     Hintergrund- & Schriftfarbe definiert, Position fixiert, Abstände, responsives Design: -->
+    <nav id="menu" class="bg-success-subtle text-secondary position-fixed start-0 p-3 d-flex flex-column">
+        <button class="btn btn-light d-md-none mb-3" id="menuToggle">Menü</button>
+        <ul class="nav flex-column d-none d-md-block" id="menuItems">
+            <li class="nav-item"><a href="index.html" class="nav-link text-secondary-emphasis">Home</a></li>
+            <li class="nav-item"><a href="#emissionen" class="nav-link text-secondary-emphasis">CO2-Emissionsdaten</a>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link text-secondary-emphasis">Über uns</a></li>
+        </ul>
+    </nav>
