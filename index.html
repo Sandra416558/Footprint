@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co2-Footprint</title>
-
+    <!-- Zugriff auf Bootstrap: -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <!-- Zugriff auf Bootstrap -->
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -16,7 +15,7 @@
      Angabe der Hintergrundfarbe, Schriftfarbe, Ausrichtung in Container & Spalten (am Seitenanfang): -->
     <header class="py-3 sticky-top" style="background-color: #e3f2fd;">
         <div class="container">
-            <nav id="firmenname" dir="ltr"> <!-- id, um auf den richtigen Teil in der styles.css zu verweisen -->
+            <nav dir="ltr">
                 <div class="row align-items-start">
                     <div class="col">
                         <!-- Überschrift 1, Klasse: Abstand unterhalb der Überschrift, Schriftfarbe, responsiv: -->
@@ -33,7 +32,8 @@
             </nav>
 
             <nav class="navbar"> <!-- Angabe für responsives Design -->
-                <!-- horizontale Liste, Mittig der Webseite, mit Verweisen auf Instagram, Facebook und den Kontaktdaten der Firma: -->
+                <!-- Globale Navigation: 
+                 horizontale Liste, Mittig der Webseite, mit Verweisen auf Instagram, Facebook und den Kontaktdaten der Firma: -->
                 <ul class="list-inline justify-content-center mx-auto">
                     <li class="list-inline-item"><a href="https://www.instagram.com/Klimabilanz365">Instagram</a></li>
                     <li class="list-inline-item"><a href="https://www.facebook.com/Klimabilanz365">Facebook</a></li>
@@ -43,10 +43,8 @@
         </div>
     </header>
 
-            <!-- Menü: 
-     CSS - um das Menü je nach Schriftkultur rechts oder links anzeigen zu lassen;
-     Hintergrund- & Schriftfarbe definiert, Position fixiert, Abstände, responsives Design: -->
-     <nav id="menu" style="background-color: #d1dee7;">
+    <!-- Menü - Hintergrundfarbe definiert: -->
+    <nav id="menu" style="background-color: #d1dee7;">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#emissionen">CO2-Emissionsdaten</a></li>
@@ -55,15 +53,14 @@
     </nav>
 
 
-    <!-- Main Teil:
-     wird in Containern / Spalten ausgerichtet: -->
+    <!-- Main Teil - wird in Containern / Spalten ausgerichtet: -->
     <main class="flex-grow-1">
-
+        <!-- Main-Teil nimmt ganze Seite ein, damit der Footer ganz unten am Seitenrand angezeigt wird -->
         <div dir="ltr">
-            <nav id="content"> <!-- Verknüpfung zur CSS Datei -->
+            <nav>
                 <!-- Artikel 1, ohne Überschrift, nur Absatz: -->
-                <br>
-                <article id="article1" class="col-lg-12 col-md-12 col-sm-12">
+                <br> <!-- Zeilenumbruch für größeren Abstand zum vorherigen Teil -->
+                <article id="article1">
                     <p>
                         Als weltweit engagierte Non-Profit-Organisation im Kampf gegen den Klimawandel präsentieren wir
                         auf
@@ -72,18 +69,19 @@
                         Unternehmen. Unser Ziel ist es,
                         Transparenz zu schaffen, Bewusstsein zu fördern und fundierte Entscheidungen zu ermöglichen. Nur
                         wenn wir wissen, wer am meisten zur
-                        Klimakrise beiträgt, können wir gemeinsam gezielt handeln.<br><br>
+                        Klimakrise beiträgt, können wir gemeinsam gezielt handeln.<br>
                     </p>
                 </article>
                 <!-- Artikel 2, mit Überschrift und Aufzählungen: -->
                 <article id="article2">
                     <h2>Treibhausgase, welche für den Klimawandel verantwortlich sind</h2>
                     <nav>
+                        <!-- Auflistung - größerer Seiteneinzug, immer Linksbündig, egal welche Schriftkultur: -->
                         <ul class="ps-5" dir="ltr">
                             <li>Kohlendioxid</li>
                             <li>Methan</li>
                             <li>Distickstoffmonxid</li>
-                            <li>Fluorierte Gase (F-Gase)</li><br><br>
+                            <li>Fluorierte Gase (F-Gase)</li><br>
                     </nav>
                     </ul>
                 </article>
@@ -108,7 +106,7 @@
                         aber ein Rückgang ist bisher
                         nicht in Sicht. CO₂-Konzentrationen in der Atmosphäre steigen weiterhin: im April 2025 wurden
                         426,8 ppm gemessen, gegenüber 423,9 ppm
-                        im April 2024.<br><br>
+                        im April 2024.<br>
                     </p>
                 </article>
                 <!-- Artikel 4, mit Überschrift, Abbildung der CO2-Emissionen und Absatz: -->
@@ -127,7 +125,7 @@
         </div>
 
         <!-- Tabelle, inkl. Such- & Filterfunktion: -->
-        <nav id="content" dir="ltr"> <!-- Verknüpfung zur CSS Datei -->
+        <nav id="content" dir="ltr"> <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur -->
             <h2 id="emissionen">CO2-Emissionen</h2>
             <div class="container"> <!-- wird in Containern / Spalten ausgerichtet -->
                 <nav>
@@ -141,7 +139,7 @@
                         </div>
                         <!-- Filtern nach Unternehmen oder Land als Flexbox Columns: -->
                         <div class="col-12 col-md-4 dropdown my-3">
-                             <!-- Aktivierung des Filter-Buttons, Farbe, Dropdown-Menü: -->
+                            <!-- Aktivierung des Filter-Buttons, Farbe, Dropdown-Menü: -->
                             <button id="filterButton" class="btn btn-secondary dropdown-toggle" type="button">
                                 Filtern nach
                             </button>
@@ -161,7 +159,7 @@
                 </nav>
             </div>
 
-            <!-- Tabelle für CO2-Emissionen, farblich angepasst -->
+            <!-- Tabelle für CO2-Emissionen, farblich angepasst, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
             <table id="tabelle-emissionsdaten" class="table table-striped table-bordered table-hover" dir="ltr">
                 <caption>CO2-Emissionen nach Ländern und Unternehmen, CO2-Emission jährlich in Mio. t absteigend
                 </caption>
@@ -175,10 +173,10 @@
                     </tr>
                 </thead>
                 <!-- Daten der Tabelle:
-                 1. Zeile Aufzählung
-                 2. Zeile Unternehmen
-                 3. Zeile Land
-                 4. Zeile CO2-Emission jährlich in Millionen Tonnen: -->
+                 1. Spalte = Aufzählung
+                 2. Spalte = Unternehmen
+                 3. Spalte = Land
+                 4. Spalte = CO2-Emission jährlich in Millionen Tonnen: -->
                 <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">1</th>
@@ -281,11 +279,11 @@
         </nav>
     </main>
 
-    <!-- Fußzeile: 
-     Ausrichtung in Container & Spalten:  -->
+    <!-- Fußzeile - Ausrichtung in Container & Spalten, Hintergrundfarbe definiert, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
     <footer class="mt-auto" style="background-color: #d1dee7;" dir="ltr">
         <div>
             <nav id="footer" class="navbar">
+                <!-- Auflistung für rechtliche Hinweise, zentral, nebeneinander aufgelistet: -->
                 <ul class="list-inline justify-content-center mx-auto">
                     <li class="list-inline-item">2025 Klimabilanz365</li>
                     <!-- Links zu den weiteren HTML-Dateien "Datenschutz" und "Impressum": -->
@@ -297,6 +295,7 @@
     </footer>
 </body>
 
+<!-- Verweis auf die Java-Script Datei: -->
 <script src="jscript.js"></script>
 
 </html>
