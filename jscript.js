@@ -1,6 +1,6 @@
 // jscript.js
 
-/* Tabelle filtern */
+/* Tabelle "CO2-Emissionen" filtern */
 document.addEventListener("DOMContentLoaded", function () {
   var input = document.getElementById("filterInput");
   var tbody = document.getElementById("tabelle-emissionsdaten").getElementsByTagName("tbody")[0];
