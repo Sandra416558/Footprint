@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,31 +47,42 @@
     <nav id="menu" style="background-color: #d1dee7;">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#emissionen">CO2-Emissionsdaten</a></li>
+            <li><a href="index.html#emissionen">CO2-Emissionsdaten</a></li>
             <li><a href="about.html">Über uns</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section id="kontakt">
+    <!-- Main Teil:
+        nimmt ganze Seite ein, damit der Footer ganz unten am Seitenrand angezeigt wird -->
+    <!-- Angaben der Kontaktdaten: -->
+    <main class="flex-grow-1">
+        <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+        <section id="kontakt" dir="ltr">
+            <!-- Adresse: -->
             <h2>Kontakt</h2>
-            <p class="ps-3 border border-primary rounded">
+            <p class="ps-3">
                 Klimabilanz365 GmbH<br>
                 Musterstraße 11223<br>
                 1111 Wien<br>
                 Österreich
             </p>
-            <p>e-mail: klimabilanz365@gmail.com</p>
-            <p>telefon: +43 1234 / 56780</p>
+            <!-- E-Mail-Adresse & Telefonnummer inkl. Bildern zur Definition: -->
+            <img src="images/e-mail.png" class="float-start ps-3" style="max-width: 60px" alt="E-Mail" />
+            <p>klimabilanz365@gmail.com</p>
+            <img src="images/telefon.png" class="float-start ps-3" style="max-width: 60px" alt="Telefonnummer" />
+            <p>+43 1234 / 56780</p>
         </section>
-        <section id="kontaktieren">
+
+        <!-- Formular zum Ausfüllen der Kontaktdaten für eine Anfrage: -->
+        <section id="kontaktieren" dir="ltr">
             <h2>Kontaktieren Sie uns</h2>
             <nav>
                 <ul>
-                    <li>
+                    <!-- Liste des auszufüllenden Formular: -->
+                    <li class="list-inline-item">
                         <form>
                             <label>Vorname: </label>
-                            <input type="text" id="vorname">
+                            <input type="text" id="vorname"><br>
                             <label>Nachname: </label>
                             <input Type="text" id="name"><br><br>
 
@@ -79,23 +91,41 @@
 
                             <label>Telefonnummer: </label>
                             <input type="text" id="tel"><br><br>
-  
+
                             <label>Hier ist Platz für Ihre Anfrage: </label>
                             <input type="text" id="anfrage"><br><br>
 
+                            <!-- Button zum Absenden der Anfrage & Kontaktdaten: -->
                             <button type="button" id="FormularAbsenden"> Anfrage absenden </button>
                         </form>
                     </li>
                 </ul>
             </nav>
 
+            <!-- Bestätigungsnachricht, dass die Anfrage erfolgreich abgesendet wurde: -->
             <h3>Anfrage abgesendet: </h3>
-            <p id="anfrage-abgesendet">asdfadsf</p>
-            
+            <p id="anfrage-abgesendet" class="ps-3">Bitte geben Sie Ihre Anfrage ein.</p>
+            <!-- ID zum Verweis auf die Java-Script-Datei -->
         </section>
     </main>
+
+    <!-- Fußzeile - Ausrichtung in Container & Spalten, Hintergrundfarbe definiert, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+    <footer class="mt-auto" style="background-color: #d1dee7;" dir="ltr">
+        <div>
+            <nav id="footer" class="navbar">
+                <!-- Auflistung für rechtliche Hinweise, zentral, nebeneinander aufgelistet: -->
+                <ul class="list-inline justify-content-center mx-auto">
+                    <li class="list-inline-item">2025 Klimabilanz365</li>
+                    <!-- Links zu den weiteren HTML-Dateien "Datenschutz" und "Impressum": -->
+                    <li class="list-inline-item"><a href="privacy.html">Datenschutz</a></li>
+                    <li class="list-inline-item"><a href="imprint.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 </body>
 
+<!-- Verweis auf die Java-Script Datei: -->
 <script src="jscript.js"></script>
 
 </html>

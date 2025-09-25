@@ -94,7 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (suchbegriff.length < 50) {
       alert("Ihre Anfrage muss aus mindestens 50 Zeichen bestehen!");
     } else {
-      ausgabe.innerText = "OK";
+      ausgabe.innerText = "Ihre Anfrage wurde erfolgreich abgesendet. " 
+      + "Wir werden Sie innerhalb der nächsten 48h kontaktieren.";
     }
   });
 });

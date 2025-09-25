@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
      Angabe der Hintergrundfarbe, Schriftfarbe, Ausrichtung in Container & Spalten (am Seitenanfang): -->
     <header class="py-3 sticky-top" style="background-color: #e3f2fd;">
         <div class="container">
+            <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
             <nav dir="ltr">
                 <div class="row align-items-start">
                     <div class="col">
@@ -46,17 +48,21 @@
     <nav id="menu" style="background-color: #d1dee7;">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#emissionen">CO2-Emissionsdaten</a></li>
+            <li><a href="index.html#emissionen">CO2-Emissionsdaten</a></li>
             <li><a href="about.html">Über uns</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
+    <!-- Main Teil - wird in Containern / Spalten ausgerichtet:
+        nimmt ganze Seite ein, damit der Footer ganz unten am Seitenrand angezeigt wird -->
+    <main class="flex-grow-1">
+        <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+        <section dir="ltr">
+            <!-- Impressum der Firma: -->
             <h2>Impressum</h2>
             <p id="informationsplicht">
-                <strong>
-                    Informationspflicht gemäß § 5 E-Commerce-Gesetz, § 14 Unternehmensgesetzbuch, § 63  
+                <strong> <!-- Schrift fett -->
+                    Informationspflicht gemäß § 5 E-Commerce-Gesetz, § 14 Unternehmensgesetzbuch, § 63
                     Gewerbeordnung und Offenlegungspflicht laut § 25 Mediengesetz<br>
                     <br>
                     Klimabilanz365 – Der CO2-Footprint
@@ -88,15 +94,32 @@
             </p>
             <h2>Haftungsausschluss:</h2>
             <p>
-                Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für Inhalte externer 
+                Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für Inhalte externer
                 Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.
             </p>
             <h2>Urheberrecht:</h2>
             <p>
-                Die Inhalte dieser Website unterliegen dem Urheberrecht. Jegliche Verwendung, Vervielfältigung 
+                Die Inhalte dieser Website unterliegen dem Urheberrecht. Jegliche Verwendung, Vervielfältigung
                 oder Verbreitung ist nur mit ausdrücklicher Genehmigung zulässig.
             </p>
         </section>
     </main>
+
+    <!-- Fußzeile - Ausrichtung in Container & Spalten, Hintergrundfarbe definiert, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+    <footer class="mt-auto" style="background-color: #d1dee7;" dir="ltr">
+        <div>
+            <nav id="footer" class="navbar">
+                <!-- Auflistung für rechtliche Hinweise, zentral, nebeneinander aufgelistet: -->
+                <ul class="list-inline justify-content-center mx-auto">
+                    <li class="list-inline-item">2025 Klimabilanz365</li>
+                    <!-- Links zu den weiteren HTML-Dateien "Datenschutz" und "Impressum": -->
+                    <li class="list-inline-item"><a href="privacy.html">Datenschutz</a></li>
+                    <li class="list-inline-item"><a href="imprint.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
 </body>
+
 </html>

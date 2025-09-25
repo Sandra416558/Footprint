@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
      Angabe der Hintergrundfarbe, Schriftfarbe, Ausrichtung in Container & Spalten (am Seitenanfang): -->
     <header class="py-3 sticky-top" style="background-color: #e3f2fd;">
         <div class="container">
+            <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
             <nav dir="ltr">
                 <div class="row align-items-start">
                     <div class="col">
@@ -46,23 +48,27 @@
     <nav id="menu" style="background-color: #d1dee7;">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#emissionen">CO2-Emissionsdaten</a></li>
+            <li><a href="index.html#emissionen">CO2-Emissionsdaten</a></li>
             <li><a href="about.html">Über uns</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
+    <!-- Main Teil - wird in Containern / Spalten ausgerichtet:
+        nimmt ganze Seite ein, damit der Footer ganz unten am Seitenrand angezeigt wird -->
+    <main class="flex-grow-1">
+        <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+        <section dir="ltr">
+            <!-- Infos zum Datenschutz der Firma: -->
             <h2>Datenschutzerklärung</h2>
             <p id="stand">
-                <em>
-                    Stand: Juli 2025
+                <em> <!-- Schriftart kursiv -->
+                    Stand: September 2025
                 </em>
             </p>
             <p>
-                Wir freuen uns über Ihr Interesse an unserem Unternehmen „Klimabilanz365 – Der CO2-Footprint“. 
-                Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Nachfolgend informieren 
-                wir Sie gemäß Art. 13 DSGVO darüber, wie wir Ihre Daten verarbeiten, wenn Sie unsere Website 
+                Wir freuen uns über Ihr Interesse an unserem Unternehmen „Klimabilanz365 – Der CO2-Footprint“.
+                Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Nachfolgend informieren
+                wir Sie gemäß Art. 13 DSGVO darüber, wie wir Ihre Daten verarbeiten, wenn Sie unsere Website
                 besuchen oder unsere Dienste nutzen.
             </p>
             <h3>1. Verantwortlicher</h3>
@@ -77,27 +83,27 @@
             <h3>2. Erhebung und Speicherung personenbezogener Daten</h3>
             <h4>a) Beim Besuch der Website</h4>
             <p>
-                Beim Aufrufen unserer Website werden durch den Webserver automatisch Informationen erfasst, die 
+                Beim Aufrufen unserer Website werden durch den Webserver automatisch Informationen erfasst, die
                 Ihr Browser übermittelt. Dies sind insbesondere:<br>
                 IP-Adresse (anonymisiert)<br>
                 Datum und Uhrzeit der Anfrage<br>
                 besuchte Seite / URL<br>
                 Browsertyp und -version<br>
                 Betriebssystem<br>
-                Diese Daten werden zur Gewährleistung eines sicheren Betriebs der Website verarbeitet (berechtigtes 
-                Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO) und nicht mit anderen Datenquellen zusammengeführt. Die 
+                Diese Daten werden zur Gewährleistung eines sicheren Betriebs der Website verarbeitet (berechtigtes
+                Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO) und nicht mit anderen Datenquellen zusammengeführt. Die
                 Logfiles werden regelmäßig gelöscht.
             </p>
             <h4>b) Bei Nutzung von Kontaktformularen oder E-Mail</h4>
             <p>
-                Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, speichern wir Ihre Angaben (Name, 
-                E-Mail-Adresse, ggf. Telefonnummer und Nachricht), um Ihre Anfrage zu bearbeiten (Rechtsgrundlage: 
+                Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, speichern wir Ihre Angaben (Name,
+                E-Mail-Adresse, ggf. Telefonnummer und Nachricht), um Ihre Anfrage zu bearbeiten (Rechtsgrundlage:
                 Art. 6 Abs. 1 lit. b DSGVO).
             </p>
             <h3>3. Cookies</h3>
             <p>
-                Unsere Website verwendet sogenannte „Cookies“. Das sind kleine Textdateien, die auf Ihrem Endgerät 
-                gespeichert werden und keine Viren enthalten. Cookies dienen dazu, unser Angebot nutzerfreundlicher, 
+                Unsere Website verwendet sogenannte „Cookies“. Das sind kleine Textdateien, die auf Ihrem Endgerät
+                gespeichert werden und keine Viren enthalten. Cookies dienen dazu, unser Angebot nutzerfreundlicher,
                 effektiver und sicherer zu machen.<br>
                 Wir verwenden:<br>
                 Technisch notwendige Cookies (z. B. zur Sprachauswahl oder Navigation)<br>
@@ -107,14 +113,9 @@
             </p>
             <h3>4. Webananlyse und Tools</h3>
             <p>
-                Falls verwendet, können Tools wie Matomo oder Google Analytics zur Reichweitenmessung eingesetzt 
-                werden. Diese Dienste setzen Cookies und übermitteln ggf. Daten an Drittländer. Die Nutzung erfolgt 
+                Falls verwendet, können Tools wie Matomo oder Google Analytics zur Reichweitenmessung eingesetzt
+                werden. Diese Dienste setzen Cookies und übermitteln ggf. Daten an Drittländer. Die Nutzung erfolgt
                 ausschließlich auf Basis Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.
-            </p>
-            <p id="hinweis">
-                <em>
-                    Hinweis: Bitte anpassen oder entfernen, falls keine Analysetools verwendet werden.
-                </em>
             </p>
             <h3>5. Ihre Rechte</h3>
             <p>
@@ -130,15 +131,32 @@
             </p>
             <h3>6. Datensicherheit</h3>
             <p>
-                Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen Manipulation, 
+                Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen Manipulation,
                 Verlust, Zerstörung oder unbefugten Zugriff zu schützen.
             </p>
             <h3>7. Änderung dieser Datenschutzerklärung</h3>
             <p>
-                Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen 
+                Wir behalten uns vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen
                 rechtlichen Anforderungen entspricht.
             </p>
         </section>
     </main>
+
+    <!-- Fußzeile - Ausrichtung in Container & Spalten, Hintergrundfarbe definiert, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+    <footer class="mt-auto" style="background-color: #d1dee7;" dir="ltr">
+        <div>
+            <nav id="footer" class="navbar">
+                <!-- Auflistung für rechtliche Hinweise, zentral, nebeneinander aufgelistet: -->
+                <ul class="list-inline justify-content-center mx-auto">
+                    <li class="list-inline-item">2025 Klimabilanz365</li>
+                    <!-- Links zu den weiteren HTML-Dateien "Datenschutz" und "Impressum": -->
+                    <li class="list-inline-item"><a href="privacy.html">Datenschutz</a></li>
+                    <li class="list-inline-item"><a href="imprint.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
 </body>
+
 </html>

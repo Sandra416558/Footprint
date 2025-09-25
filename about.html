@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -47,17 +47,19 @@
     <nav id="menu" style="background-color: #d1dee7;">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#emissionen">CO2-Emissionsdaten</a></li>
+            <li><a href="index.html#emissionen">CO2-Emissionsdaten</a></li>
             <li><a href="about.html">Über uns</a></li>
         </ul>
     </nav>
 
 
+    <!-- Main Teil:
+        nimmt ganze Seite ein, damit der Footer ganz unten am Seitenrand angezeigt wird -->
     <main class="flex-grow-1">
-
+        <!-- Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
         <div dir="ltr">
+            <!-- Absatz "Über uns" -->
             <nav id="content">
-
                 <h2>Über uns</h2>
                 <p>
                     Willkommen bei uns! Wir sind ein engagiertes Team mit einer gemeinsamen Vision: Qualität, Innovation
@@ -73,16 +75,16 @@
                 </p>
     </main>
 
-    <!-- Fußzeile: 
-     Ausrichtung in Container & Spalten:  -->
-    <footer class="mt-auto" dir="ltr">
+    <!-- Fußzeile - Ausrichtung in Container & Spalten, Hintergrundfarbe definiert, Ausrichtung ist immer Linksbündig, egal welche Schriftkultur: -->
+    <footer class="mt-auto" style="background-color: #d1dee7;" dir="ltr">
         <div>
-            <nav id="footer"> <!-- Verknüpfung zur CSS-Datei -->
-                <ul>
-                    <p>2025 Klimabilanz365</p>
+            <nav id="footer" class="navbar">
+                <!-- Auflistung für rechtliche Hinweise, zentral, nebeneinander aufgelistet: -->
+                <ul class="list-inline justify-content-center mx-auto">
+                    <li class="list-inline-item">2025 Klimabilanz365</li>
                     <!-- Links zu den weiteren HTML-Dateien "Datenschutz" und "Impressum": -->
-                    <li><a href="privacy.html">Datenschutz</a></li>
-                    <li><a href="imprint.html">Impressum</a></li>
+                    <li class="list-inline-item"><a href="privacy.html">Datenschutz</a></li>
+                    <li class="list-inline-item"><a href="imprint.html">Impressum</a></li>
                 </ul>
             </nav>
         </div>
