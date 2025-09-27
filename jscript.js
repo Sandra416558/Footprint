@@ -1,8 +1,8 @@
 // jscript.js
 
-/* Tabelle "CO2-Emissionen" filtern */
+/* Tabelle durchsuchen */
 document.addEventListener("DOMContentLoaded", function () {
-  var input = document.getElementById("filterInput");
+  var input = document.getElementById("sucheInput");
   var tbody = document.getElementById("tabelle-emissionsdaten").getElementsByTagName("tbody")[0];
   if (!input || !tbody) return;
 
@@ -100,17 +100,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Menü Toggle für mobile Geräte
-//const toggleBtn = document.getElementById('menuToggle');
-//const menuItems = document.getElementById('menuItems');
-
-//toggleBtn.addEventListener('click', () => {
-//  menuItems.classList.toggle('d-none');
-//});
-
-// Schreibrichtung prüfen und Menü rechts positionieren, falls rtl
-//if (document.documentElement.dir === 'rtl') {
-  //document.getElementById('menu').classList.remove('start-0');
-  //document.getElementById('menu').classList.add('end-0');
-//}
 
